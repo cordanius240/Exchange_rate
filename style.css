@@ -76,7 +76,6 @@ header {
 
 .time_get {
     height: 10%;
-    text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -88,7 +87,10 @@ header {
 
 .dropdown {
     position: relative;
-    display: inline-block;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
 }
 
 .dropdown-content {
@@ -105,10 +107,23 @@ header {
     display: block;
 }
 
-.dropdown-toggle {
-    background-color: #f1f1f1;
+.toogle-dropout {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
     color: #333;
     border: none;
     padding: 5px 10px;
     cursor: pointer;
+    background-color: rgb(244, 245, 248);
+}
+
+.Dropdown_item {
+    box-shadow: rgba(22, 33, 54, 0.16) 0px 1px 2px;
+    border: 1px solid#0c0b0b;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }

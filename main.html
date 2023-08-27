@@ -21,28 +21,30 @@
         <a href="./change.html" class="ssilk">Курс валют
         </a>
     </header>
-    <div class="dropdown">
-        <div id="toogle-dropout" class="toogle-dropout">↑ ↓</div>
-        <div id="dropdown-content" class="dropdown-content">
-            <div id="sortirovkaAlph">По алфавиту</div>
-            <div id="sortirovkaNum">По убыванию крусу</div>
-            <div id="sortirovkaNum_up">По возрастанию крусу</div>
-        </div>
-    </div>
 
 
 
     <div class="time_get" id="time_get">
 
     </div>
+    <div class="dropdown">
+        <div id="dropdown-content" class="dropdown-content">
+            <div id="sortirovkaAlph" class="Dropdown_item">По алфавиту</div>
+            <div id="sortirovkaNum" class="Dropdown_item">По убыванию крусу</div>
+            <div id="sortirovkaNum_up" class="Dropdown_item">По возрастанию крусу</div>
+        </div>
+    </div>
+    <div id="toogle-dropout" class="toogle-dropout">↑ ↓ Отсортировать</div>
+
     <div id="shares" class="shares">
 
     </div>
 
     <script>
+        //var timedeiv = document.querySelector(".time_get");
         var dropdown = document.querySelector('.dropdown');
-        var dropdownToggle = dropdown.querySelector('.toogle-dropout');
-        var dropdownContent = dropdown.querySelector('.dropdown-content');
+        var dropdownToggle = document.querySelector('.toogle-dropout');
+        var dropdownContent = document.querySelector('.dropdown-content');
         dropdownToggle.addEventListener("click", function () {
             dropdownContent.classList.toggle('show');
         });
@@ -70,7 +72,6 @@
 
             var time_get = document.getElementById("time_get");
             var ddate = new Date(data.Date);
-
             time_get.innerHTML += "Курсы представленны на время : " + ddate.getHours().toString().padStart(2, '0') + ":" + ddate.getMinutes().toString().padStart(2, '0') + " " + ddate.getDate().toString().padStart(2, '0') + "." + (ddate.getMonth() + 1).toString().padStart(2, '0') + "." + ddate.getFullYear();
             var sortirovkaAlph = document.getElementById("sortirovkaAlph");
             var sortirovkaNum = document.getElementById("sortirovkaNum");
@@ -83,6 +84,7 @@
                 for (var i = 0; i < sortedDivs.length; i++) {
                     listdiv.appendChild(sortedDivs[i]);
                 }
+                dropdownContent.classList.toggle('show');
             });
             sortirovkaNum.addEventListener("click", function () {
                 var sortedDivs = Array.from(allchilds).sort(function (a, b) {
@@ -95,6 +97,7 @@
                 for (var i = 0; i < sortedDivs.length; i++) {
                     listdiv.appendChild(sortedDivs[i]);
                 }
+                dropdownContent.classList.toggle('show');
             });
             sortirovkaNum_up.addEventListener("click", function () {
                 var sortedDivs = Array.from(allchilds).sort(function (a, b) {
@@ -107,6 +110,7 @@
                 for (var i = 0; i < sortedDivs.length; i++) {
                     listdiv.appendChild(sortedDivs[i]);
                 }
+                dropdownContent.classList.toggle('show');
             });
 
         });
